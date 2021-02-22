@@ -11,6 +11,11 @@ const routes = [
    */
   [GET, '/home/categories', home.getCategories],
 
+  /**
+   * Retorna la lista de la ropa con descuentos
+   */
+  [GET, '/home/discountClothes', home.getDiscountClothes],
+
   // /*
   //  * Ruta que consulta por id y retorna un registro 
   //  */
