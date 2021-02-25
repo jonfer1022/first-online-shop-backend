@@ -1,24 +1,26 @@
 const connection = require('../../config/connection');
 
-class homeModel {
+class ProductsModel {
 
-  static async getCategories(){
+  static async getAllProducts(){
     return new Promise(async (resolve, reject) =>{
       try {
         if(connection){
           let querySql = `
-            select *, _c.name as "categories"
-            from categories_clothes c
-            inner join _categories _c ON _c.id = c.id
+            select c.*,
+              im.image_path
+            from clothes c
+            inner join images_clothes im ON im.id_clothes = c.id
+            where im.principal_flag = ${true}
             `;
           connection.query(querySql, (error, rows) =>{
-            if(error) reject(`An error ocurred in the query getCategories: ${error}`);
+            if(error) reject(`An error ocurred in the query getAllProducts: ${error}`);
             resolve (rows);
           })
         }
       } catch (error) {
-        console.error(`An error ocurred in getCategories: ${error}`);
-        reject(`An error ocurred in getCategories: ${error}`);
+        console.error(`An error ocurred in getAllProducts: ${error}`);
+        reject(`An error ocurred in getAllProducts: ${error}`);
       }
     })
   };
@@ -77,4 +79,4 @@ class homeModel {
   };
 }
 
-module.exports = homeModel;
+module.exports = ProductsModel;

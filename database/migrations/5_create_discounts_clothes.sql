@@ -1,3 +1,4 @@
+-- Tabla que registra los productos con un descuento asignado
 create table discount_clothes (
 	id int not null auto_increment,
   id_clothes int not null,

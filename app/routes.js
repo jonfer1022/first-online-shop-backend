@@ -1,4 +1,5 @@
 const home = require('./controllers/home.controller'); 
+const products = require('./controllers/products.controller');
 
 const GET = "get";
 const PUT = "put";
@@ -16,23 +17,25 @@ const routes = [
    */
   [GET, '/home/discountClothes', home.getDiscountClothes],
 
-  // /*
-  //  * Ruta que consulta por id y retorna un registro 
-  //  */
-  // [GET, '/:id', cars.getCarById],
+  /**
+   * Retorna listado de la última colección registrada.
+   * @amount Cantidad de registros a retornar
+   */
+  [GET, '/home/lastestCollection', home.getLastestCollection],
 
-  // /*
-  //  * Inserta un nuevo carro. 
+  /**
+   * Retorna la lista de las categorias
+   */
+  [GET, '/products/allProducts', products.getAllProducts],
+  // /* 
   //  */
   // [POST, '/', cars.insertCar],
 
-  // /*
-  //  * Actualiza el registro de un carro. 
+  // /* 
   //  */
   // [PUT, '/:id', cars.editCar],
 
-  // /*
-  //  * Elimina un registro de los carros. 
+  // /* 
   //  */
   // [DELETE, '/:id', cars.deleteCar]
 ]
