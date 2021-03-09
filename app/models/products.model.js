@@ -2,7 +2,7 @@ const connection = require('../../config/connection');
 
 class ProductsModel {
 
-  static async getAllProducts(){
+  static async getAllProducts(gender, category){
     return new Promise(async (resolve, reject) =>{
       try {
         if(connection){
@@ -11,7 +11,10 @@ class ProductsModel {
               im.image_path
             from clothes c
             inner join images_clothes im ON im.id_clothes = c.id
-            where im.principal_flag = ${true}
+            where 
+              im.principal_flag = ${true} AND 
+              c.gender_id ${ gender ? "IS NOT NULL" : null} AND 
+              c.category_id ${ category ? "IS NOT NULL": null}
             `;
           connection.query(querySql, (error, rows) =>{
             if(error) reject(`An error ocurred in the query getAllProducts: ${error}`);
