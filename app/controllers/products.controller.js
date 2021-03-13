@@ -2,8 +2,8 @@ const ProductsModel = rootRequire('app/models/products.model')
 
 const getAllProducts = async (req,res) =>{
   try {
-    const { gender, category } = req.query;
-    let data = await ProductsModel.getAllProducts(gender, category);
+    const { gender, category, sortBy} = req.query;
+    let data = await ProductsModel.getAllProducts(gender, category, sortBy);
     res.json(data)
   } catch (error) {
     console.error("An error ocurred getAllProducts: ",error);

@@ -6,5 +6,5 @@ create table discount_clothes (
   id_percentage int,
   primary key (id),
   foreign key (id_clothes) references clothes(id),
-  foreign key (id_percentage) references percentage(id)
+  foreign key (id_percentage) references _percentage(id)
 )

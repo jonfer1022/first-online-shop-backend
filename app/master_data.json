@@ -1,0 +1,9 @@
+{
+  "sortBy":{
+    "lowerPrice": 2,
+    "higherPrice": 3,
+    "bestSeller": 4,
+    "lastlestCollection": 5,
+    "bestDiscount": 6
+  }
+}
