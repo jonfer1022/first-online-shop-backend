@@ -5,5 +5,9 @@
     "bestSeller": 4,
     "lastlestCollection": 5,
     "bestDiscount": 6
+  },
+
+  "clothes_sizes":{
+    "all": 0
   }
 }
