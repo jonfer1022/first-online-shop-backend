@@ -38,6 +38,7 @@ class homeModel {
             inner join _percentage p ON p.id = dc.id_percentage
             inner join images_clothes ic ON ic.id_clothes = c.id
             where dc.discount_flag = ${true} AND ic.principal_flag = ${true}
+            ORDER BY p.percentage DESC
             `;
           connection.query(querySql, (error, rows) =>{
             if(error) reject(`An error ocurred in the query getDiscountClothes: ${error}`);
