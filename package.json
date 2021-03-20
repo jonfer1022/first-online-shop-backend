@@ -1,11 +1,13 @@
 {
+  "homepage": "https://jonfer1022.github.io/first-online-shop-backend/",
   "name": "first-online-shop-backend",
   "version": "1.0.0",
   "description": "Creación del Api Rest backend respectivo al api first-online-shop (Front-end). Se realiza la aplicación usando como librería principal express.js y como base de datos Mysql, además de usar otras librerías que observaremos más adelante.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +19,6 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
     "nodemon": "^2.0.7"
   }
 }
