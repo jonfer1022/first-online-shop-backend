@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const data = require('./dataPrivate.json');
-const db = data.mysql_local;
+const db = data.mysql_remote;
 
 const objectConnection ={
   host: db.host,
