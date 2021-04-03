@@ -31,7 +31,7 @@ const routes = [
   /**
    * Retorna información de un producto en específico.
    */
-   [GET, '/products/getProductById', products.getProductById],
+  [GET, '/products/getProductById', products.getProductById],
   // /* 
   //  */
   // [POST, '/', cars.insertCar],
