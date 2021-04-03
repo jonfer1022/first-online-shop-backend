@@ -37,7 +37,7 @@ class homeModel {
             inner join clothes c ON c.id = dc.id_clothes
             inner join _percentage p ON p.id = dc.id_percentage
             inner join images_clothes ic ON ic.id_clothes = c.id
-            where dc.discount_flag = ${true} AND ic.principal_flag = ${true}
+            where dc.discount_flag = ${true} AND ic.principal_flag = ${true} AND p.percentage != 0
             ORDER BY p.percentage DESC
             `;
           connection.query(querySql, (error, rows) =>{

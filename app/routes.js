@@ -24,9 +24,14 @@ const routes = [
   [GET, '/home/lastestCollection', home.getLastestCollection],
 
   /**
-   * Retorna la lista de las categorias
+   * Retorna la lista de las categorias.
    */
   [GET, '/products/allProducts', products.getAllProducts],
+  
+  /**
+   * Retorna información de un producto en específico.
+   */
+   [GET, '/products/getProductById', products.getProductById],
   // /* 
   //  */
   // [POST, '/', cars.insertCar],

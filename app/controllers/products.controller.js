@@ -11,6 +11,19 @@ const getAllProducts = async (req,res) =>{
   }
 }
 
+const getProductById = async (req,res) =>{
+  try {
+    const { product_id } = req.query;
+    let data = await ProductsModel.getProductById(product_id);
+    res.json(data)
+  } catch (error) {
+    console.error("An error ocurred getProductById: ",error);
+    throw ("An error ocurred getProductById: ",error);
+  }
+}
+
+
 module.exports = {
-  getAllProducts
+  getAllProducts,
+  getProductById
 }

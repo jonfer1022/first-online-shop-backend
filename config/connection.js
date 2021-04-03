@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const data = require('./dataPrivate.json');
-const db = data.mysql_remote;
+const db = data.mysql_local;
 
 const objectConnection ={
   host: db.host,
@@ -15,7 +15,7 @@ const myConn = mysql.createConnection(objectConnection);
 myConn.connect((error) =>{
   error ?
     console.log(`There's a error: ${error}`):
-    console.log(`Connected DataBase`);
+    console.log(`Connected DataBase host: ${db.host}`);
 })
 
 
