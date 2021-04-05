@@ -14,7 +14,7 @@ class ProductsModel {
               c.price,
               GROUP_CONCAT(s.id) as "sizes_id",
 	            GROUP_CONCAT(s.name) as "sizes",
-              IF(dc.discount_flag = ${true}, p.percentage, ${0}) as percentage
+              IF(dc.discount_flag = ${true}, p.percentage, ${0}) as "percentage"
             from clothes c
             inner join images_clothes im ON im.id_clothes = c.id
             inner join clothes_sizes cz ON cz.id_clothes = c.id 
@@ -33,7 +33,9 @@ class ProductsModel {
               c.price,
               "sizes_id",
               "sizes",
-              percentage
+              "percentage",
+              dc.discount_flag,
+              p.percentage
             ${ sortBy == master_data.sortBy.lowerPrice ? `ORDER BY c.price ASC` : ""}
             ${ sortBy == master_data.sortBy.higherPrice ? `ORDER BY c.price DESC` : ""}
             ${ sortBy == master_data.sortBy.bestDiscount ? `ORDER BY percentage DESC` :""}
@@ -71,7 +73,7 @@ class ProductsModel {
             inner join _percentage p ON p.id = dc.id_percentage
             where 
               c.id = ${product_id}
-            GROUP BY im.id
+            GROUP BY im.id, im.image_path, "id_sizes","sizes", c.id, p.percentage
             `;
           // console.log(querySql);
           connection.query(querySql, (error, rows) =>{
