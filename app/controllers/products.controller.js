@@ -1,5 +1,8 @@
 const ProductsModel = rootRequire('app/models/products.model')
 
+/**
+ * Retorna la lista de productos según el filtro requerido
+*/
 const getAllProducts = async (req,res) =>{
   try {
     const { gender, category, sortBy, size, priceMin, priceMax} = req.query;
@@ -11,6 +14,9 @@ const getAllProducts = async (req,res) =>{
   }
 }
 
+/**
+ * Retorna la información respectiva al id del producto solicitado.
+*/
 const getProductById = async (req,res) =>{
   try {
     const { product_id } = req.query;

@@ -1,5 +1,8 @@
 const homeModel = rootRequire('app/models/home.model')
 
+/**
+ * Retorna la lista de las categorías existentes
+*/
 const getCategories = async (req,res) =>{
   try {
     let data = await homeModel.getCategories();
@@ -10,6 +13,9 @@ const getCategories = async (req,res) =>{
   }
 }
 
+/**
+ * Retorna la lista de los descuentos existentes
+*/
 const getDiscountClothes = async (req,res) =>{
   try {
     let data = await homeModel.getDiscountClothes();
@@ -20,6 +26,9 @@ const getDiscountClothes = async (req,res) =>{
   }
 }
 
+/**
+ * Retorna la lista de la última colección a una cantidad específica.
+*/
 const getLastestCollection = async (req,res) =>{
   try {
     const { amount } = req.query;
