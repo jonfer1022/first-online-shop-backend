@@ -11,5 +11,3 @@ const serverRunning = (error)=> {
 }
 
 app.listen(app.get('port'), serverRunning)
-
-// console.log("This is my server");

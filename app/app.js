@@ -7,9 +7,11 @@ const port = (process.env.PORT || 3001);
 //Inizialitions
 const app = express();
 
+//Utilizado para obtener las variables de entorno
+require('dotenv').config();
+
 //Settings
 app.set('port',port)
-
 
 //Middlewares
 app.use(express.urlencoded({extended: false}));
